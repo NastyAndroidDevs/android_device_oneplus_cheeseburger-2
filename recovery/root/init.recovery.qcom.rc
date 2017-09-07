@@ -28,6 +28,8 @@
 on fs
     wait /dev/block/platform/soc/1da4000.ufshc
     symlink /dev/block/platform/soc/1da4000.ufshc /dev/block/bootdevice
+    chown root shell /proc/touchpanel/double_tap_enable
+    write /proc/touchpanel/double_tap_enable 1
     chmod 0660 /dev/qseecom
     chown system drmrpc /dev/qseecom
     chmod 0664 /dev/ion
